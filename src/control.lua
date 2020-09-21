@@ -170,6 +170,14 @@ function on_init()
 		end	
 	end
 	
+	if game.active_mods["Krastorio2"] and (kitSetting == "medium" or kitSetting == "big") then
+		local n = 1
+		if settings.startup["crash-quick-start-spidertron"].value == true then
+			n = n + 2
+		end
+		created_items["dt-fuel"] = n
+	end
+	
 	remote.call("freeplay", "set_created_items", created_items)
 		
 end
